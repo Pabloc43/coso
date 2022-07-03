@@ -1,0 +1,159 @@
+{% extends "template2.html" %}
+{% block titlee%}Consulta{% endblock %}
+{% block linkss %}
+{% endblock %}
+{% block contentt %}
+<section class="contact-box">
+    <div class="col-xl-7 col-lg-12 d-flex centrate">
+        <div class="container align-self-center p-6">
+            <h1 class="font-weight-bold mb-3">¿Que quisieras hacer?</h1>
+            <form action="" method="post" autocomplete="on" enctype=multipart/form-data>
+                <div class="buscar aaa">
+                    <input type="text" class="buscar" placeholder="Buscar mis dudas" required
+                           value="{{request.form.buscar}}"
+                           name="buscar"
+                           id="buscar">
+                    <div class="icono-btn">
+                        <i class="fas fa-search icono"><input type="submit" value="" class="oculto"></i>
+                    </div>
+                </div>
+            </form>
+            <div class="search-1">
+                <!--
+                        for x in coincidencias:
+                            for y in x:
+                                print(x[y])-->
+                {% for x in coincidencias %}
+                <details>
+                    <summary><h2>{{x['Consulta']}}</h2></summary>
+                    <form action="" method="post" autocomplete="off" enctype=multipart/form-data>
+                        <div class="form-row mb-2">
+                            <div class="form-group col-md-6">
+                                <label for="Consulta{{x['IDc']}}" class="font-weight-bold">Consulta:</label><br>
+                                <textarea name="up-Consulta" id="Consulta{{x['IDc']}}"
+                                          required
+                                          cols="35" rows="3" maxlength="120" aria-required="true"
+                                          class="form-control ">{{x['Consulta']}}</textarea>
+                            </div>
+                            <div class="form-group col-md-6 formulario">
+                                <label for="areas{{x['IDc']}}"
+                                       class="font-weight-bold"><strong>Categorias:</strong></label>
+                                <div id="areas{{x['IDc']}}">
+                                    <div class="radioo">
+                                        <input type="checkbox" name="up-Quimica" value="1" id="Quimica{{x['IDc']}}">
+                                        <label for="Quimica{{x['IDc']}}" class="a{{x['Q']}}">Quimica</label>
+                                        <input type="checkbox" name="up-Fisica" value="1" id="Fisica{{x['IDc']}}">
+                                        <label for="Fisica{{x['IDc']}}" class="a{{x['F']}}">Fisica</label>
+                                        <input type="checkbox" name="up-Programacion" value="1"
+                                               id="Programacion{{x['IDc']}}">
+                                        <label for="Programacion{{x['IDc']}}" class="a{{x['P']}}">Programacion</label>
+                                        <input type="checkbox" name="up-Literatura" value="1"
+                                               id="Literatura{{x['IDc']}}">
+                                        <label for="Literatura{{x['IDc']}}" class="a{{x['Liter']}}">Literatura</label>
+                                        <input type="checkbox" name="up-Lenguas" value="1" id="Lenguas{{x['IDc']}}">
+                                        <label for="Lenguas{{x['IDc']}}" class="a{{x['Leng']}}">Lenguas</label>
+                                        <input type="checkbox" name="up-Ingles" value="1" id="Ingles{{x['IDc']}}">
+                                        <label for="Ingles{{x['IDc']}}" class="a{{x['I']}}">Ingles</label>
+                                        <input type="checkbox" name="up-Matematicas" value="1"
+                                               id="Matematicas{{x['IDc']}}">
+                                        <label for="Matematicas{{x['IDc']}}" class="a{{x['M']}}">Matematicas</label>
+                                        <input type="checkbox" name="up-Astronomia" value="1"
+                                               id="Astronomia{{x['IDc']}}">
+                                        <label for="Astronomia{{x['IDc']}}" class="a{{x['A']}}">Astronomia</label>
+                                        <input type="checkbox" name="up-Biologia" value="1" id="Biologia{{x['IDc']}}">
+                                        <label for="Biologia{{x['IDc']}}" class="a{{x['B']}}">Biologia</label>
+                                        <input type="checkbox" name="up-Otro" value="1" id="Otro{{x['IDc']}}">
+                                        <label for="Otro{{x['IDc']}}" class="a{{x['O']}}">Otro</label>
+                                    </div>
+                                    <div class="radioo">
+                                        <input type="checkbox" name="Estado" value="1" class="Estado"
+                                               id="Estado{{x['IDc']}}">
+                                        <label for="Estado{{x['IDc']}}" class="a{{x['Estado']}} mass">Estado</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group mb-5">
+                            <div class="form-check">
+                                <br>
+                            </div>
+                        </div>
+                        <input type="checkbox" name="identificador" value="{{x['IDc']}}" id="b{{x['IDc']}}">
+                        <label for="b{{x['IDc']}}"><small>cliquear antes de enviar cambios</small></label>
+                        <button type="submit" class="btn1 btn-default1 btn-lg1 ulockd-btn-thm1 button1 width-100"
+                                data-loading-text="Getting Few Sec...">Editar
+                        </button>
+                    </form>
+
+                    {% if error %}
+                    {% for f in error %}
+                    <p><strong>Mensaje:</strong> {{f}}</p>
+                    {% endfor %}
+                    {% endif %}
+                    <form action="" method="post" autocomplete="off" enctype=multipart/form-data>
+                        <div class="form-group col-md-6 formulario">
+                            <div class="radioo">
+                                <input type="checkbox" name="Eliminar" value="{{x['IDc']}}" class="Eliminar"
+                                       id="Eliminar{{x['IDc']}}" checked>
+                                <button type="submit"
+                                        class="btn1 btn-default1 btn-lg1 ulockd-btn-thm1 button1 mass"
+                                        data-loading-text="Getting Few Sec...">Eliminar
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </details>
+                {% endfor %}
+            </div>
+        </div>
+        <dialog id="ms">
+            <h2>Crear consulta </h2>
+            <form action="" method="post" autocomplete="off" enctype=multipart/form-data>
+                <div class="form-row mb-2">
+                    <div class="form-group col-md-6">
+                        <label for="Consulta" class="font-weight-bold">Consulta:</label><br>
+                        <textarea name="Consulta" id="Consulta" placeholder="¿Que quisieras saber?." required
+                                  cols="35" rows="3" maxlength="120" aria-required="true"
+                                  class="form-control "></textarea>
+                    </div>
+                    <div class="form-group col-md-6 formulario">
+                        <label for="areas" class="font-weight-bold"><strong>Areas a las que piense que
+                            pertenezca:</strong></label>
+                        <div id="areas">
+                            <div class="radioo">
+                                {% for a in areas %}
+                                <input type="checkbox" name="{{ a.area }}" value="1" id="{{ a.area }}">
+                                <label for="{{ a.area }}">{{ a.area }}</label>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group mb-5">
+                    <div class="form-check">
+                        <br>
+                        <input type="checkbox" name="aceptar_terminos" id="aceptar_terminos"
+                               value="aceptar_terminos" class="form-check-input">
+                    </div>
+                </div>
+                <button id="btnEnviar1" type="submit"
+                        class="btn1 btn-default1 btn-lg1 ulockd-btn-thm1 button1 width-100"
+                        data-loading-text="Getting Few Sec..." disabled>Realizar consulta
+                </button>
+            </form>
+            <button class="btn1 btn-default1 btn-lg1 ulockd-btn-thm1 button1 width-100" id="close"
+                    onclick="document.getElementById('ms').close()">Cerrar
+            </button>
+            {% if error %}
+            <p><strong>Mensaje:</strong> {{ error }}</p>
+            {% endif %}
+        </dialog>
+        <a type="button" href="#" id="show" onclick="document.getElementById('ms').showModal()">
+            <h2 class="aaaa nav-menu-link1 nav-link1 nav-menu-link_active1 otraa">Crear consulta</h2>
+        </a>
+        <br><br><br><br><br> <br><br><br><br>
+
+    </div>
+</section>
+
+{% endblock %}

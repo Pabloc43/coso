@@ -1,0 +1,53 @@
+{% extends "template1.html" %}
+{% block title%}{% block titlee %}{% endblock %}{% endblock %}
+{% block links %}
+{% block linkss %}{% endblock %}
+<link href="../static/css/estilo2.css" rel="stylesheet" media="screen">
+<link href="../static/css/formul.css" rel="stylesheet" media="screen">
+{% endblock %}
+{% block cerrar %}<a href="{{ url_for('logout') }}" class="nav-menu-link1 nav-link1 botoncito cerrar-s">Cerrar
+    sesion</a>{% endblock %}
+{% block content %}
+<header>
+
+    <div class="contenedor-2">
+
+        <nav class="navbar nav1">
+            <ul class="nav__links nav-menu1">
+
+                <li class="nav-menu-item1">
+                    <b class="tooltip">
+                    <i class="fas fa-home icononos"></i>
+                            <span class="tooltip-box" >Este es el mensaje Home</span>
+                    </b>
+                    <a href="{{ url_for('general') }}" type="button" class="">Home</a>
+                </li>
+                <li class="nav-menu-item1">
+                    <b class="tooltip">
+                    <i class="fas fa-user-graduate icononos"></i>
+                            <span class="tooltip-box" >Este es el mensaje Usuario</span>
+                    </b>
+                    <a href="{{ url_for('usuario') }}">Usuario</a>
+                </li>
+                <li class="nav-menu-item1">
+                    <b class="tooltip">
+                        <i class="fas fa-question-circle icononos"></i>
+                        <span class="tooltip-box" >El estado sirve para indicar si la duda es vigente ;)</span>
+                    </b>
+                    <a href="{{ url_for('consulta') }}">Consulta</a>
+                </li>
+            </ul>
+        </nav>
+        {% if error %}
+        <p><strong>Mensaje:</strong> {{ error }}</p>
+        {% endif %}
+    </div>
+    <div>
+        {% block contentt %}
+        {% endblock %}
+    </div>
+</header>
+<main>
+
+</main>
+{% endblock %}

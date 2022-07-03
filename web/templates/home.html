@@ -1,0 +1,356 @@
+{% extends "template2.html" %}
+{% block titlee%}Home{% endblock %}
+{% block linkss %}
+{% endblock %}
+{% block contentt %}
+
+<div id="jneral">
+    <div id="mF">
+        <img src="static/img/figuritaH.png" class="imm">
+    </div>
+    <div id="Ousers">
+        <h1 class="tit">Otros usuarios:</h1>
+        <section class="zlyder2">
+            {% for x in lisss %}
+            <dialog id="ms{{x['IDc']}}" class="didiag">
+                <section class="zlyder centrate1poco">
+                    <div class="Tplan2">
+                        <div class="Tplan3">
+                            <input type="text" value="Escrito por {{x['ID_UsuarioC']}}" disabled
+                                   class="inpp">
+                            <textarea name="up-Consulta" id="aConsulta{{x['IDc']}}"
+                                      required
+                                      cols="51" rows="7" maxlength="120" aria-required="true"
+                                      class="form-control texxx" disabled>{{x['Consulta']}}</textarea>
+                            <label for="aareas{{x['IDc']}}"
+                                   class="font-weight-bold"><strong>Temas:</strong></label>
+                            <div id="aareas{{x['IDc']}}">
+                                <div class="radioo">
+                                    <input type="checkbox" name="up-Quimica" value="x['Q']"
+                                           id="aQuimica{{x['IDc']}}" hidden>
+                                    <label for="aQuimica{{x['IDc']}}" class="a{{x['Q']}}"
+                                           {% if x['Q'] == 0 %} hidden {% endif %}>Quimica</label>
+                                    <input type="checkbox" name="up-Fisica" value="1"
+                                           id="aFisica{{x['IDc']}}" hidden>
+                                    <label for="aFisica{{x['IDc']}}" class="a{{x['F']}}"
+                                           {% if x['F'] == 0 %} hidden {% endif %}>Fisica</label>
+                                    <input type="checkbox" name="up-Programacion" value="1"
+                                           id="aProgramacion{{x['IDc']}}" hidden>
+                                    <label for="aProgramacion{{x['IDc']}}" class="a{{x['P']}}"
+                                           {% if x['P'] == 0 %} hidden {% endif %}>Programacion</label>
+                                    <input type="checkbox" name="up-Literatura" value="1"
+                                           id="aLiteratura{{x['IDc']}}" hidden>
+                                    <label for="aLiteratura{{x['IDc']}}" class="a{{x['Liter']}}"
+                                           {% if x['Liter'] == 0 %} hidden {% endif %}>Literatura</label>
+                                    <input type="checkbox" name="up-Lenguas" value="1"
+                                           id="aLenguas{{x['IDc']}}" hidden>
+                                    <label for="aLenguas{{x['IDc']}}" class="a{{x['Leng']}}"
+                                           {% if x['Leng'] == 0 %} hidden {% endif %}>Lenguas</label>
+                                    <input type="checkbox" name="up-Ingles" value="1"
+                                           id="aIngles{{x['IDc']}}" hidden>
+                                    <label for="aIngles{{x['IDc']}}" class="a{{x['I']}}"
+                                           {% if x['I'] == 0 %} hidden {% endif %}>Ingles</label>
+                                    <input type="checkbox" name="up-Matematicas" value="1"
+                                           id="aMatematicas{{x['IDc']}}" hidden>
+                                    <label for="aMatematicas{{x['IDc']}}" class="a{{x['M']}}"
+                                           {% if x['M'] == 0 %} hidden {% endif %}>Matematicas</label>
+                                    <input type="checkbox" name="up-Astronomia" value="1"
+                                           id="aAstronomia{{x['IDc']}}" hidden>
+                                    <label for="aAstronomia{{x['IDc']}}" class="a{{x['A']}}"
+                                           {% if x['A'] == 0 %} hidden {% endif %}>Astronomia</label>
+                                    <input type="checkbox" name="up-Biologia" value="1"
+                                           id="aBiologia{{x['IDc']}}" hidden>
+                                    <label for="aBiologia{{x['IDc']}}" class="a{{x['B']}}"
+                                           {% if x['B'] == 0 %} hidden {% endif %}>Biologia</label>
+                                    <input type="checkbox" name="up-Otro" value="1"
+                                           id="aOtro{{x['IDc']}}" hidden>
+                                    <label for="aOtro{{x['IDc']}}" class="a{{x['O']}}"
+                                           {% if x['O'] == 0 %} hidden {% endif %}>Otro</label>
+                                </div>
+                                {% if x['Estado'] == 1 %} <span style='font-size:30px;'
+                                                                class="bEST">&#128526;</span>
+                                {% else %}
+                                <span style='font-size:30px;' class="bEST">&#129300;</span>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                {% for s in coment%}
+                {% if s['IDc'] == x['IDc'] %}
+                <div class="comenn">
+                    <div class="comenn1">
+                        <input type="text" value="Escrito por {{s['ID_UsuarioR']}}" disabled
+                               class="inpp">
+
+                        <input type="text" value="{{s['Fecha']}}" disabled
+                               class="inpp">
+                        <input type="text" value="{{s['ID']}}" disabled
+                               class="inpp" hidden>
+                        <input type="text" value="{{s['IDc']}}" disabled
+                               class="inpp" hidden>
+                    </div>
+                    <div class="comennt2">
+                        <textarea disabled class="inpp textt">{{s['Respuesta']}}</textarea>
+                    </div>
+                    {% if session['user'] == s['ID_UsuarioR'] %}
+                    <form action="" method="post" autocomplete="off" enctype=multipart/form-data>
+                        <input type="text" name="IDD" value="{{s['ID']}}" hidden>
+                        <input type="submit" value="eliminar" class="elimi">
+                    </form>
+                    {% endif %}
+                </div>
+                {% endif %}
+                {% endfor %}
+                <form action="" method="post" autocomplete="off" enctype=multipart/form-data>
+                    <div class="comenntf otraa aaaa">
+                        <input type="text" name="IDc" value="{{x['IDc']}}" hidden>
+                        <textarea name="Respuesta" class="inpp" required></textarea>
+                        <button type="submit"
+                                class="btn1 btn-default1 btn-lg1 ulockd-btn-thm1 button1"
+                                data-loading-text="Getting Few Sec...">Comentar
+                        </button>
+                    </div>
+                </form>
+                {% if error %}
+                {% for f in error %}
+                <p><strong>Mensaje:</strong> {{f}}</p>
+                {% endfor %}
+                {% endif %}
+                <button class="btn1 btn-default1 btn-lg1 ulockd-btn-thm1 button1 width-100" id="close"
+                        onclick="document.getElementById('ms{{x['IDc']}}').close()">Atras!
+                </button>
+            </dialog>
+            <div class="probando">
+                <div class="subprobando">
+                    <div class="card">
+                        <div class="head">
+                            <div class="circle">
+                            </div>
+                            <div class="imgn">
+                                <img src="static/img/p_img/defectoUser.jpg">
+                            </div>
+                        </div>
+                        <div class="description">
+                            <h5 class="tit">{{ x['ID_UsuarioC'] }}:</h5>
+                            <p>{{ x['Consulta'] }}</p>
+                        </div>
+                        <div class="contact">
+                            <a type="button" href="#" id="show"
+                               onclick="document.getElementById('ms{{x['IDc']}}').showModal()"
+                               class="p{{ x['Estado'] }}">Comentar</a>
+                            <p class="parrafito">
+                                <small>
+                                    {% if x['Q'] == 1 %} Quimica, {% endif %}
+                                    {% if x['F'] == 1 %} Fisica, {% endif %}
+                                    {% if x['P'] == 1 %} Programacion, {% endif %}
+                                    {% if x['Liter'] == 1 %} Literatura, {% endif %}
+                                    {% if x['Leng'] == 1 %} Lenguaje, {% endif %}
+                                    {% if x['I'] == 1 %} Ingles, {% endif %}
+                                    {% if x['M'] == 1 %} Matematicas, {% endif %}
+                                    {% if x['A'] == 1 %} Astronomis, {% endif %}
+                                    {% if x['B'] == 1 %} Biologia, {% endif %}
+                                    {% if x['O'] == 1 %} Otro, {% endif %}
+                                </small>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </section>
+    </div>
+    <div id="Tplan">
+        <h1 class="tit">Tus planteos:</h1>
+        <section class="zlyder">
+            {% for x in lis %}
+            <dialog id="fms{{x['IDc']}}" class="didiag">
+                <section class="zlyder centrate1poco">
+                    <div class="Tplan2">
+                        <div class="Tplan3">
+                            <input type="text" value="Escrito por {{x['ID_UsuarioC']}}" disabled
+                                   class="inpp">
+                            <textarea name="up-Consulta" id="faConsulta{{x['IDc']}}"
+                                      required
+                                      cols="51" rows="7" maxlength="120" aria-required="true"
+                                      class="form-control texxx" disabled>{{x['Consulta']}}</textarea>
+                            <label for="faareas{{x['IDc']}}"
+                                   class="font-weight-bold"><strong>Temas:</strong></label>
+                            <div id="faareas{{x['IDc']}}">
+                                <div class="radioo">
+                                    <input type="checkbox" name="up-Quimica" value="x['Q']"
+                                           id="faQuimica{{x['IDc']}}" hidden>
+                                    <label for="faQuimica{{x['IDc']}}" class="a{{x['Q']}}"
+                                           {% if x['Q'] == 0 %} hidden {% endif %}>Quimica</label>
+                                    <input type="checkbox" name="up-Fisica" value="1"
+                                           id="faFisica{{x['IDc']}}" hidden>
+                                    <label for="faFisica{{x['IDc']}}" class="a{{x['F']}}"
+                                           {% if x['F'] == 0 %} hidden {% endif %}>Fisica</label>
+                                    <input type="checkbox" name="up-Programacion" value="1"
+                                           id="faProgramacion{{x['IDc']}}" hidden>
+                                    <label for="faProgramacion{{x['IDc']}}" class="a{{x['P']}}"
+                                           {% if x['P'] == 0 %} hidden {% endif %}>Programacion</label>
+                                    <input type="checkbox" name="up-Literatura" value="1"
+                                           id="faLiteratura{{x['IDc']}}" hidden>
+                                    <label for="faLiteratura{{x['IDc']}}" class="a{{x['Liter']}}"
+                                           {% if x['Liter'] == 0 %} hidden {% endif %}>Literatura</label>
+                                    <input type="checkbox" name="up-Lenguas" value="1"
+                                           id="faLenguas{{x['IDc']}}" hidden>
+                                    <label for="faLenguas{{x['IDc']}}" class="a{{x['Leng']}}"
+                                           {% if x['Leng'] == 0 %} hidden {% endif %}>Lenguas</label>
+                                    <input type="checkbox" name="up-Ingles" value="1"
+                                           id="faIngles{{x['IDc']}}" hidden>
+                                    <label for="faIngles{{x['IDc']}}" class="a{{x['I']}}"
+                                           {% if x['I'] == 0 %} hidden {% endif %}>Ingles</label>
+                                    <input type="checkbox" name="up-Matematicas" value="1"
+                                           id="faMatematicas{{x['IDc']}}" hidden>
+                                    <label for="faMatematicas{{x['IDc']}}" class="a{{x['M']}}"
+                                           {% if x['M'] == 0 %} hidden {% endif %}>Matematicas</label>
+                                    <input type="checkbox" name="up-Astronomia" value="1"
+                                           id="faAstronomia{{x['IDc']}}" hidden>
+                                    <label for="faAstronomia{{x['IDc']}}" class="a{{x['A']}}"
+                                           {% if x['A'] == 0 %} hidden {% endif %}>Astronomia</label>
+                                    <input type="checkbox" name="up-Biologia" value="1"
+                                           id="faBiologia{{x['IDc']}}" hidden>
+                                    <label for="faBiologia{{x['IDc']}}" class="a{{x['B']}}"
+                                           {% if x['B'] == 0 %} hidden {% endif %}>Biologia</label>
+                                    <input type="checkbox" name="up-Otro" value="1"
+                                           id="faOtro{{x['IDc']}}" hidden>
+                                    <label for="faOtro{{x['IDc']}}" class="a{{x['O']}}"
+                                           {% if x['O'] == 0 %} hidden {% endif %}>Otro</label>
+                                </div>
+                                {% if x['Estado'] == 1 %} <span style='font-size:30px;'
+                                                                class="bEST">&#128526;</span>
+                                {% else %}
+                                <span style='font-size:30px;' class="bEST">&#129300;</span>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                {% for s in commi %}
+                {% if s['IDc'] == x['IDc'] %}
+                <div class="comenn">
+                    <div class="comenn1">
+                        <input type="text" value="Escrito por {{s['ID_UsuarioR']}}" disabled
+                               class="inpp">
+
+                        <input type="text" value="{{s['Fecha']}}" disabled
+                               class="inpp">
+                        <input type="text" value="{{s['ID']}}" disabled
+                               class="inpp" hidden>
+                        <input type="text" value="{{s['IDc']}}" disabled
+                               class="inpp" hidden>
+                    </div>
+                    <div class="comennt2">
+                        <textarea disabled class="inpp textt">{{s['Respuesta']}}</textarea>
+                    </div>
+                    {% if session['user'] == s['ID_UsuarioR'] %}
+                    <form action="" method="post" autocomplete="off" enctype=multipart/form-data>
+                        <input type="text" name="IDD" value="{{s['ID']}}" hidden>
+                        <input type="submit" value="eliminar" class="elimi">
+                    </form>
+                    {% endif %}
+                </div>
+                {% endif %}
+                {% endfor %}
+                <form action="" method="post" autocomplete="off" enctype=multipart/form-data>
+                    <div class="comenntf otraa aaaa">
+                        <input type="text" name="IDc" value="{{x['IDc']}}" hidden>
+                        <textarea name="Respuesta" class="inpp" required></textarea>
+                        <button type="submit"
+                                class="btn1 btn-default1 btn-lg1 ulockd-btn-thm1 button1"
+                                data-loading-text="Getting Few Sec...">Comentar
+                        </button>
+                    </div>
+                </form>
+                {% if error %}
+                {% for f in error %}
+                <p><strong>Mensaje:</strong> {{f}}</p>
+                {% endfor %}
+                {% endif %}
+                <button class="btn1 btn-default1 btn-lg1 ulockd-btn-thm1 button1 width-100" id="fclose"
+                        onclick="document.getElementById('fms{{x['IDc']}}').close()">Atras!
+                </button>
+            </dialog>
+            <div class="Tplan2">
+                <div class="Tplan3">
+                    <input type="text" value="Escrito por {{x['ID_UsuarioC']}}" disabled class="inpp">
+                    <textarea name="up-Consulta" id="Consulta{{x['IDc']}}"
+                              required
+                              cols="51" rows="7" maxlength="120" aria-required="true"
+                              class="form-control texxx" disabled>{{x['Consulta']}}</textarea>
+                    <label for="areas{{x['IDc']}}"
+                           class="font-weight-bold"><strong>Temas:</strong></label>
+                    <div id="areas{{x['IDc']}}">
+                        <div class="radioo">
+                            <input type="checkbox" name="up-Quimica" value="x['Q']" id="Quimica{{x['IDc']}}" hidden>
+                            <label for="Quimica{{x['IDc']}}" class="a{{x['Q']}}"
+                                   {% if x['Q'] == 0 %} hidden {% endif %}>Quimica</label>
+                            <input type="checkbox" name="up-Fisica" value="1" id="Fisica{{x['IDc']}}" hidden>
+                            <label for="Fisica{{x['IDc']}}" class="a{{x['F']}}"
+                                   {% if x['F'] == 0 %} hidden {% endif %}>Fisica</label>
+                            <input type="checkbox" name="up-Programacion" value="1"
+                                   id="Programacion{{x['IDc']}}" hidden>
+                            <label for="Programacion{{x['IDc']}}" class="a{{x['P']}}"
+                                   {% if x['P'] == 0 %} hidden {% endif %}>Programacion</label>
+                            <input type="checkbox" name="up-Literatura" value="1"
+                                   id="Literatura{{x['IDc']}}" hidden>
+                            <label for="Literatura{{x['IDc']}}" class="a{{x['Liter']}}"
+                                   {% if x['Liter'] == 0 %} hidden {% endif %}>Literatura</label>
+                            <input type="checkbox" name="up-Lenguas" value="1" id="Lenguas{{x['IDc']}}" hidden>
+                            <label for="Lenguas{{x['IDc']}}" class="a{{x['Leng']}}"
+                                   {% if x['Leng'] == 0 %} hidden {% endif %}>Lenguas</label>
+                            <input type="checkbox" name="up-Ingles" value="1" id="Ingles{{x['IDc']}}" hidden>
+                            <label for="Ingles{{x['IDc']}}" class="a{{x['I']}}"
+                                   {% if x['I'] == 0 %} hidden {% endif %}>Ingles</label>
+                            <input type="checkbox" name="up-Matematicas" value="1"
+                                   id="Matematicas{{x['IDc']}}" hidden>
+                            <label for="Matematicas{{x['IDc']}}" class="a{{x['M']}}"
+                                   {% if x['M'] == 0 %} hidden {% endif %}>Matematicas</label>
+                            <input type="checkbox" name="up-Astronomia" value="1"
+                                   id="Astronomia{{x['IDc']}}" hidden>
+                            <label for="Astronomia{{x['IDc']}}" class="a{{x['A']}}"
+                                   {% if x['A'] == 0 %} hidden {% endif %}>Astronomia</label>
+                            <input type="checkbox" name="up-Biologia" value="1" id="Biologia{{x['IDc']}}" hidden>
+                            <label for="Biologia{{x['IDc']}}" class="a{{x['B']}}"
+                                   {% if x['B'] == 0 %} hidden {% endif %}>Biologia</label>
+                            <input type="checkbox" name="up-Otro" value="1" id="Otro{{x['IDc']}}" hidden>
+                            <label for="Otro{{x['IDc']}}" class="a{{x['O']}}"
+                                   {% if x['O'] == 0 %} hidden {% endif %}>Otro</label>
+
+                        </div>
+                    </div>
+                    <input type="checkbox" name="Estado" value="{{x['Estado']}}" class="l{{x['Estado']}}" hidden>
+                    <input type="checkbox" name="identificador" value="{{x['IDc']}}" id="b{{x['IDc']}}" hidden>
+                </div>
+                <a type="button" href="#" id="ashow"
+                   onclick="document.getElementById('fms{{x['IDc']}}').showModal()"
+                   class="">{% if x['Estado'] == 1 %} <span style='font-size:30px;'
+                                                            class="bEST">&#128526;</span>
+                    {% else %}
+                    <span style='font-size:30px;' class="bEST">&#129300;</span>
+                    {% endif %}</a>
+            </div>
+            {% endfor %}
+        </section>
+    </div>
+</div>
+<script defer>
+const  nombreU = document.getElementById('NombreUsuario').textContent;
+function saludoInicial(nombreUsuario) {
+  console.log("Hola " + nombreUsuario + " Bienvenido :)");
+alert("Hola "+nombreUsuario+" bienvenido :)")
+}
+saludoInicial(nombreU)
+
+
+
+
+
+
+
+
+
+</script>
+{% endblock %}

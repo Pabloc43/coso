@@ -1,0 +1,8 @@
+{% extends "template2.html" %}
+{% block title%}Sesion activa{% endblock %}
+{% block content %}
+<section class="salida1">
+Actualmente ya tienes una sesion activa. ¿Que quieres hacer?<br>
+<a href="{{ url_for('logout') }}">Cerrar sesion</a> <br><a href="{{ url_for('general') }}">Cancelar</a>
+</section>
+{% endblock %}

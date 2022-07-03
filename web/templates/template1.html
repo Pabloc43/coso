@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Studyngo - {% block title%}{% endblock %}</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="../static/css/estilo1.css" rel="stylesheet" media="screen">
+    <script defer src="../static/js/template1.js"></script>
+    <script src="https://kit.fontawesome.com/7e5b2d153f.js" crossorigin="anonymous"></script>
+    {% block links %}{% endblock %}
+</head>
+<body>
+<header class="header1">
+    <nav class="nav1">
+        <a href="{{ url_for('inicio') }}" class="logo1 nav-link1">Studyngo</a>
+        <button class="nav-toggle1" aria-label="Abrir menu">
+            <i class="fas fa-bars"></i>
+        </button>
+        <ul class="nav-menu1 ">
+                        <li class="nav-menu-item1">
+                <a href="{{ url_for('inicio') }}" class="nav-menu-link1 nav-link1 nav-menu-link_active1">Inicio</a>
+            </li>
+            <li class="nav-menu-item1">
+                <a href="{{ url_for('nosotros') }}" class="nav-menu-link1 nav-link1 nav-menu-link_active1">Nosotros</a>
+            </li>
+            <li class="nav-menu-item1">
+                <a href="{{ url_for('ayudaF') }}" class="nav-menu-link1 nav-link1 nav-menu-link_active1">Ayuda</a>
+            </li>
+            <li class="nav-menu-item1">
+               {% block cerrar %}{% endblock %}
+            </li>
+
+        </ul>
+    </nav>
+</header>
+<main>
+    <div class="insertado1">
+        {% block content %}
+        {% endblock %}
+
+    </div>
+</main>
+</body>
+</html>

@@ -1,0 +1,19 @@
+{% extends "template1.html" %}
+{% block title%}Inicio{% endblock %}
+
+{% block content %}
+    <div class="kbzas1">
+        <h2>Bienvenido a Studyngo!!!</h2>
+        <h3>¿Que quieres hacer?</h3>
+    </div>
+    <div class="meta-button1">
+        <div class="btn-content1">
+            <a href="{{ url_for('registro') }}">
+                <button class="btn1">Registrarse</button>
+            </a>
+            <a href="{{ url_for('login') }}">
+                <button class="btn1"> Iniciar Sesion</button>
+            </a>
+        </div>
+    </div>
+{% endblock %}

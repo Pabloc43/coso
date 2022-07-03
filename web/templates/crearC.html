@@ -1,0 +1,52 @@
+{% extends "template2.html" %}
+{% block titlee%}Consulta{% endblock %}
+{% block linkss %}
+{% endblock %}
+{% block contentt %}
+<section class="contact-box">
+    <div class="col-xl-7 col-lg-12 d-flex centrate">
+        <div class="container align-self-center p-6">
+            <h1 class="font-weight-bold mb-3">¿Que duda tendrias?</h1>
+            <h4>Generales:</h4>
+            <h5 class="cajon">Cajon de dudas:</h5>
+            <form action="" method="post" autocomplete="on" enctype=multipart/form-data>
+                <div class="buscar">
+                    <input type="text" class="buscar" placeholder="Buscar" required value="{{request.form.buscar}}"
+                           name="buscar"
+                           id="buscar">
+                    <div class="icono-btn">
+                        <i class="fas fa-search icono"><input type="submit" value="" class="oculto"></i>
+                    </div>
+                </div>
+            </form>
+            <div class="search-1">
+            {% for x in coincidencias %}
+            <div>
+                <details>
+                    <summary><strong>{{x['Cuestion']}}</strong></summary>
+                    <p>{{x['rCuestion']}}</p>
+                </details>
+            </div>
+            {% endfor %}
+            </div>
+            <form action="" method="post" autocomplete="off" enctype=multipart/form-data>
+                <div>
+                    <div>
+    <textarea name="Cuestion" id="Cuestion" placeholder="¿En que podemos ayudarte?" required
+              cols="17" rows="3" maxlength="120" aria-required="true"
+              class="form-control t-area"></textarea>
+                    </div>
+                    <input type="submit" value="Agregar consulta" class="btn btn-primary btn-fin">
+                </div>
+            </form>
+            <ul>
+
+            </ul>
+            {% if error %}
+            <p><strong>Mensaje:</strong> {{ error }}</p>
+            {% endif %}
+        </div>
+    </div>
+</section>
+
+{% endblock %}

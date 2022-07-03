@@ -1,0 +1,8 @@
+{% extends "template1.html" %}
+{% block title%}Sin acceso{% endblock %}
+{% block content %}
+<section class="salida1">
+    <h1>No tiene permisos para ingresar a esta ruta</h1>
+    <a href="{{ url_for('inicio') }}">Volver al inicio</a>
+</section>
+{% endblock %}

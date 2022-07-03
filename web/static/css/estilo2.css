@@ -1,0 +1,416 @@
+.contenedor-2 a{
+margin-top: 50px;
+background: #74DA29;
+border-radius: 40px;
+box-shadow: 5px 5px rgba(96, 166, 45, 0.8);
+color: #ffff;
+width: 160px;
+height: 80px;
+font-size: 30px;
+text-decoration: none;
+padding: 3px;
+}
+
+.contenedor-2 i{
+color: blue;
+padding-right: 8px;
+}
+
+.icononos {
+font-size: 35px;
+margin-top: 80px!important;
+}
+
+
+.contenedor-2 {
+margin-left: 45%;
+margin-top: -1%!important;
+}
+
+.formm {
+margin-left: 27%;
+position: absolute;
+margin-top: 0.8%;
+}
+
+.centrador {
+margin-left: 22.5%;
+width: 60%;
+}
+
+.formulario input[type="checkbox"] {
+display: none;
+}
+
+.formulario input[type="checkbox"] {
+display: none;
+}
+
+.formulario .radioo label {
+color: #33BB11;
+background: rgba(0,0,0,.1);
+padding: 5px 15px 5px 51px;
+display: inline-block;
+position: relative;
+font-size: 1em;
+border-radius: 3px;
+cursor: pointer;
+-webkit-transition: all 0.3s ease;
+-o-transition: all 0.3s ease;
+transition: all 0.3s ease;
+margin: 3px;
+}
+
+.formulario .radioo label:hover {
+background: rgba(51, 187, 17, 0.2);
+
+}
+
+.formulario .radioo label:before {
+content: "";
+width: 19px;
+height: 19px;
+display: inline-block;
+background: none;
+border: 3px solid #33BB11;
+border-radius: 50%;
+position: absolute;
+left: 17px;
+top: 3px;
+}
+
+.formulario input[type="checkbox"]:checked + label {
+padding: 5px 15px;
+background: #33BB11;
+border-radius: 2px;
+color: #fff;
+}
+
+.formulario input[type="checkbox"]:checked + label:before {
+display: none;
+}
+
+.aaaa {
+padding: 18px;
+margin-top: 15%;
+text-decoration: none;
+width: 40%;
+}
+
+.aaa {
+margin-top: 0.5%;
+}
+
+.otraa {
+
+}
+
+.otraa {
+  padding: 1rem;
+  margin: 0 1rem 1rem 1rem;
+  background: #FC9B20;
+  border-left: 2px solid #364f6b;
+  border-radius: 50%;
+  width: 14.64%;
+  height: 4%;
+  text-align: center;
+  margin-left: 9%;
+  margin-top: -1%;
+}
+
+.a1 {
+border: #4DB1EA 4px solid;
+
+}
+
+.tooltip {
+font-weight: normal;
+color: #3c48e5;
+text-decoration: none;
+position: relative;
+}
+
+.tooltip:hover .tooltip-box {
+display: inline-block;
+transition: display 1s;
+}
+
+.tooltip-box {
+display: none;
+position: absolute;
+background: #000;
+line-height: 20px;
+width: 390px;
+z-index: 500;
+text-align: center;
+color: #fff;
+font-size: 14px;
+padding: 5px 10px;
+border-radius: 5px;
+left: 0;
+right: 0;
+bottom: 45px;
+}
+
+.tooltip-box::after {
+content: "";
+display: block;
+border-top: 7px solid #000;
+border-left: 7px solid transparent;
+border-right: 7px solid transparent;
+position: absolute;
+bottom: -7px;
+}
+
+.mass{
+margin-left: 100%!important;
+}
+
+.deletee {
+margin-left: 80%!important;
+margin-top: -200px!important;
+}
+
+#jneral {
+margin: auto;
+width: 960px;
+height: 700px;
+}
+
+#mF {
+float: right;
+width: 380px;
+height: 400px;
+background-color: white;
+}
+
+#Ousers {
+margin-top: 30px!important;
+width: 510px;
+height: 380px;
+background-color: blue;
+margin-left: 20px;
+border-radius: 30px;
+}
+
+.probando {
+width: 100%!important;
+object-fit: cover!important;
+scroll-snap-align: center!important;
+}
+
+.subprobando{
+border-radius: 10px;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+margin-top: 5px;
+}
+
+.zlyder2 {
+margin: auto;
+display: flex!important;
+ max-width: 900px!important;
+ height: 340px!important;
+ width: 100%!important;
+ overflow-x: scroll!important;
+ scroll-snap-type: x mandatory!important;
+}
+
+.zlyder {
+margin: auto;
+display: flex!important;
+ max-width: 900px!important;
+ height: 280px!important;
+ width: 100%!important;
+ overflow-x: scroll!important;
+ scroll-snap-type: x mandatory!important;
+}
+
+.Tplan2 {
+width: 100%!important;
+object-fit: cover!important;
+scroll-snap-align: center!important;
+}
+
+.Tplan3 {
+border-radius: 10px;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+margin-top: 5px;
+margin-left: 15px!important;
+margin-right: 15px|!important;
+width: 430px!important;
+height: 250px!important;
+background-color: green!important;
+}
+
+.texxx {
+font-size: px;
+min-width: 430px!important;
+min-height: 150px!important;
+border-radius: 20px;
+border: 2px solid black!important;
+background: white!important;
+resize: none;
+}
+
+.tit {
+margin-left: 7%;
+color: skyblue;
+}
+
+.imm {
+width: 85%;
+float: right;
+margin-right: 5%;
+}
+
+.bEST {
+float: right;
+margin-top: -10%;
+position: relative;
+}
+
+.card {
+margin-top: 5px;
+position: relative;
+width: 150px;
+height: 300px;
+background: #fff;
+border-radius: 5px;
+overflow: hidden;
+float: left;
+margin-left: 10px;
+margin-right: 10px;
+}
+
+.card .head {
+height: 125px;
+width: 100%;
+position: relative;
+}
+
+.card .head .circle{
+position: absolute;
+width: 150px;
+height: 150px;
+border-radius: 50%;
+background: #0b6f72;
+bottom: 0;
+}
+
+.card .head .imgn {
+width: 100px;
+height: 100px;
+position: absolute;
+padding: 5px;
+border-radius: 50%;
+bottom: -30%;
+left: 50%;
+transform: translate(-50%);
+}
+
+.card .head .imgn img{
+width: 100%;
+height: 100%;
+border-radius: 50%;
+object-fit: cover;
+margin-top: -60px;
+}
+
+.card .description{
+height: 120px;
+padding: 20px 10px 10px 10px;
+border-bottom: solid 0.1px rgba(6, 74, 76, .18);
+text-align: center;
+}
+
+.card:hover{
+box-shadow: 0 10px 10px 10px rgba(2, 89, 92, 1);
+}
+
+.card .description p {
+margin-top: 0px;
+font-size: 18px;
+}
+
+.card .contact {
+width: 100%;
+height: 40px;
+display: flex;
+align-items: end;
+justify-content: left;
+}
+
+.card .contact a{
+text-decoration: none;
+color: #fff;
+background: #21B01D;
+padding: 5px;
+border-radius: 6px;
+transition: .3s;
+}
+
+.card .contact a:hover{
+background: #157579;
+}
+
+.parrafito {
+font-size: 10px;
+margin-left: 5px;
+}
+
+.p1 {
+border: 3px solid #8037DC ;
+}
+
+.centrate1poco {
+margin-top: 3%;
+margin-left: 30%;
+}
+
+.didiag{
+    border: none;
+    border-radius: 40px;
+    text-align: center;
+    width: 60%;
+    padding: 0px 5px;
+    margin-left: 20%;
+    margin-top: 3%;
+}
+
+.comenn {
+width: 600px;
+height: 100px;
+background-color: #C2E7B5;
+margin: auto;
+border-radius: 10px;
+margin-bottom: 20px;
+}
+
+.comenn1 {
+text-align: left;
+}
+
+.comennt2 {
+background: solid red!important;
+width: 50%;
+height: 20%;
+}
+
+.comenntf {
+width: 300px;
+height: 100px;
+background: solid red;
+margin: auto;
+margin-bottom: 0.5%;
+}
+
+.elimi {
+margin-left: 85%;
+margin-top: 5%;
+}
+
+.textt {
+width: 600px;
+height: 40px;
+margin-top: 2px;
+}
